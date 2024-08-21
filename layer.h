@@ -1,3 +1,4 @@
+#pragma once
 //layer.h
 //Author: Coby Cockrell
 //Date: 5/5/2024
