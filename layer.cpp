@@ -3,7 +3,9 @@
 //Date: 5/6/2024
 //Purpose: This is the layer implimentation file inwhich each layer of the network is defined, and their respective propagation and activation is applied.
 
-#include "layer.h"
+#include "layers.h"
+#include "activate.h"
+
 
 // Helper function for weight initialization
 void initialize_weights(float* weights, uint32_t input_size, uint32_t output_size) {
@@ -68,7 +70,7 @@ void HiddenLayer::forward(const float* input, float* output) {
         for (uint32_t j = 0; j < input_size; ++j) {
             sum += input[j] * hidden_weights[i * input_size + j];
         }
-        output[i] = sum + hidden_biases[i]; // Apply activation function (e.g., ReLU) here
+        output[i] = activate::relu(sum + hidden_biases[i]); // Apply ReLU
     }
 }
 
