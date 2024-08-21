@@ -3,7 +3,7 @@
 //Date: 5/6/2024
 //Purpose: This is the layer implimentation file inwhich each layer of the network is defined, and their respective propagation and activation is applied.
 
-#include "layers.h"
+#include "layer.h"
 #include "activate.h"
 
 
