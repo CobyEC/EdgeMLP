@@ -56,8 +56,8 @@ int main() {
             std::cout << "Target = " << training_data[i].second << std::endl;
         }
 
-        //Current best testing is 10 epochs with a lr = 0.001
-        float learning_rate = 0.0001f;
+        //Current best testing is 40 epochs with a lr = 0.001
+        float learning_rate = 0.001f;
         int epochs = 40;
         std::cout << "Learning rate: " << learning_rate << ", Epochs: " << epochs << std::endl;
 
@@ -126,8 +126,8 @@ int main() {
                 << ", Avg Hidden Activation: " << avg_hidden_activation << std::endl;
 
             //EarlyStopping
-            if (accuracy > 0.96) {
-                std::cout << "Early stopping: Achieved 96% accuracy." << std::endl;
+            if (accuracy > 0.90) {
+                std::cout << "Early stopping: Achieved 90% accuracy." << std::endl;
                 break;
             }
         }
@@ -168,7 +168,7 @@ int main() {
                 if (i % 10 == 0) std::cout << "Incorrect prediction" << std::endl;
             }
         }
-
+        
         float test_accuracy = static_cast<float>(correct_predictions) / test_data.size() * 100;
         std::cout << "\nTest Results:" << std::endl;
         std::cout << "Correct Predictions: " << correct_predictions << "/" << test_data.size() << std::endl;
